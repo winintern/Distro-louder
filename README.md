@@ -1,23 +1,101 @@
-# ubuntu-iso-downlouder
-Ubuntu 22.04.5 ISO Downloader
-Консольное приложение, которое скачивает официальный ISO-образ Ubuntu 22.04.5 LTS напрямую с серверов releases.ubuntu.com.
-Никакой рекламы, никаких лишних кликов, никакой эмуляции сайтов. Просто меню, прогресс-бар
-Что это и зачем?
-Иногда хочется понастольгировать, иногда вдохнуть жизнь в старенький ноутбук, а иногда  просто получить чистый ISO без лишнего мусора. Это приложение делает ровно это скачивает Ubuntu 22.04.5 (Jammy Jellyfish) с официального зеркала и сохраняет на ваш диск.
-Куда сохраняется файл?
-Образ сохраняется в папку C:\Downloads, которая создаётся автоматически в корневом каталоге диска.
-Почему именно там? Потому что я так решил. Это просто, удобно и не надо гадать, куда делся файл. Как это работает?
-Программа использует WinINet и не требует никаких дополнительных библиотек.
-Я написал эту программу на Pascal (Free Pascal). На это ушло полдня мучений с компилятором, HTTPS и разными библиотеками. Но оно того стоило теперь можно скачать Ubuntu 22.04.5 одной кнопкой, без посещения сайта. Я буду рад, если вы скажете спасибо за мои старания хотя бы мысленно. Хех.
-Я не ворую и не присваиваю себе продукт компании Canonical. Вся интеллектуальная собственность, права на дистрибутив и торговые марки принадлежат Canonical Ltd. и сообществу Ubuntu. Это приложение всего лишь альтернативный способ скачать официальный ISO-образ напрямую, сделанный чисто из любопытства и желания помочь. Никакого мошенничества или пиратства.
-A tiny Windows console tool that downloads the official Ubuntu 22.04.5 LTS ISO image directly from releases.ubuntu.com. No ads, no extra clicks, no site emulation just a menu, a progress bar
-Why?
-Sometimes you want a clean ISO for an old laptop, or you just miss the good old days when things worked. This app fetches the image straight from the official mirror, with zero junk.
-Where the file goes?
-The ISO is saved into C:\Downloads, which is automatically created in the root of your drive.
-Why there? Because I decided so. It's simple, predictable, and you won't lose your file.
-Important note
-I do not steal or misappropriate Canonical's product. All intellectual property, distribution rights, and trademarks belong to Canonical Ltd. and the Ubuntu community. This application is merely an alternative way to download the official ISO image directly, made purely out of curiosity. No fraud or piracy involved.
-How it works?
-It uses WinINet
-I wrote this tool in Pascal (Free Pascal). It took me half a day of fighting the compiler, HTTPS, and various DLLs. But it was worth it: now you can download Ubuntu 22.04.5 with one click. I'd really appreciate it if you said thanks for my effort even if just in your head. Heh.
+🚀 Distro ISO Downloader v4.0
+https://img.shields.io/badge/Made%2520with-Pascal-%2523003a6f?style=flat-square
+https://img.shields.io/badge/License-MIT-yellow.svg?style=flat-square
+https://img.shields.io/badge/Platform-Windows-lightgrey?style=flat-square
+
+Консольный загрузчик официальных ISO‑образов Ubuntu, Kubuntu, Lubuntu и Windows 11.
+Программа скачивает выбранный дистрибутив напрямую с серверов правообладателей, не открывая браузер и не используя сайты‑посредники.
+
+📦 Что это и зачем
+Вы выбираете нужную ОС (Ubuntu 22.04/24.04/25.04, Kubuntu 22.04 LTS, Lubuntu 22.04 LTS, Windows 11 25H2)
+
+Утилита сразу начинает загрузку ISO в C:\Downloads
+
+Показывается прогресс‑бар, скорость скачивания и анимация (ракеты, наполняющие чашу)
+
+Для Windows 11 автоматически создаётся файл с контрольной суммой (MD5) для проверки подлинности
+
+Никакой рекламы, никаких лишних действий
+
+Пригодится, если:
+
+официальный сайт недоступен или перегружен, а ISO нужно скачать быстро
+
+вы переустанавливаете систему и не хотите каждый раз искать ссылку
+
+вы просто любите консоль и минимализм
+
+🖥️ Требования
+Windows 10 / 11 (или другая ОС с WinAPI)
+
+Free Pascal Compiler (FPC) версии 3.2.2 или выше
+
+Для записи ISO на USB‑флешку (встроенная функция) требуются права администратора
+
+⚡ Быстрый старт
+bash
+git clone https://github.com/winintern/ubuntu-iso-downlouder.git
+cd ubuntu-iso-downlouder
+fpc ubuntudownlouderV4.pas
+ubuntu-downlouderV4.exe
+После запуска выберите нужный пункт меню и дождитесь окончания загрузки.
+ISO‑образ появится в папке C:\Downloads.
+
+🔧 Как это устроено
+Программа написана на Object Pascal (Free Pascal).
+Для загрузки используется чистый WinINet (без OpenSSL и других внешних зависимостей).
+Ссылки на образы ведут на официальные серверы Canonical и Microsoft (проверенные статические ссылки).
+При желании вы можете легко добавить другие версии или архитектуры.
+
+📁 Куда сохраняется файл
+Образы сохраняются в папку C:\Downloads, которая создаётся автоматически.
+Почему именно там? Потому что так решил автор. Это просто, удобно и файл никогда не потеряется.
+
+⚠️ Важное предупреждение (дисклеймер)
+Я не ворую и не присваиваю себе продукт компаний Canonical или Microsoft.
+Все интеллектуальные права, права на распространение и торговые марки принадлежат
+Canonical Ltd. и Microsoft Corporation.
+
+Программа является некоммерческим проектом, созданным чисто из любопытства и желания помочь.
+Она не изменяет и не распространяет пиратские копии. ISO‑образы загружаются с официальных серверов правообладателей.
+
+При первом запуске программа автоматически создаёт файл README_BEFORE_USE.txt (на русском и английском),
+содержащий полный текст дисклеймера. Ознакомьтесь с ним перед использованием.
+
+📸 Анимация и интерфейс
+Во время загрузки ты видишь:
+
+Строку прогресса с процентами и скоростью (KB/s или MB/s)
+
+Графический прогресс‑бар [###...]
+
+Чашу, наполняющуюся синей «водой» по мере загрузки
+
+Ракеты (^), взлетающие с нижней части экрана и падающие в чашу
+
+Всё это делает процесс скачивания не скучным, а залипательным 😎
+
+📝 От автора
+Я написал эту программу на Pascal (Free Pascal).
+На это ушло полдня мучений с компилятором, HTTPS, WinINet и поиском рабочих ссылок.
+Но оно того стоило: теперь можно скачать Ubuntu или Windows одной кнопкой, без браузера.
+
+Я буду рад, если вы скажете спасибо за мои старания — хотя бы мысленно. Хех.
+
+(English)
+I wrote this tool in Pascal (Free Pascal). It took me half a day of fighting the compiler, HTTPS, and various DLLs. But it was worth it: now you can download Ubuntu or Windows with one click. I'd really appreciate a thank you for my effort — even if just in your head. Heh.
+
+📁 Файлы
+ubuntu-downlouderV4.exe — готовая программа
+
+ubuntudownlouderV4.pas — исходный код на Pascal
+
+C:\Downloads\README_BEFORE_USE.txt — дисклеймер (создаётся автоматически)
+
+C:\Downloads\*.md5 — файлы контрольных сумм для Windows (создаются автоматически)
+
+📄 Лицензия
+MIT — делайте с кодом всё, что хотите, только сохраняйте указание авторства.
+
+Создано с уважением к Ubuntu, Windows и любовью к Паскалю.
+
