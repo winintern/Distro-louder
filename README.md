@@ -83,6 +83,25 @@ Canonical Ltd. и Microsoft Corporation.
 
 (English)
 I wrote this tool in Pascal (Free Pascal). It took me half a day of fighting the compiler, HTTPS, and various DLLs. But it was worth it: now you can download Ubuntu or Windows with one click. I'd really appreciate a thank you for my effort — even if just in your head. Heh.
+🛠️ Планы на будущее
+Эта программа будет обновляться, пока не достигнет стадии совершенства.
+В дальнейших версиях планируется:
+
+Поддержка других редакций Windows (Education, Enterprise)
+
+Возможность выбора языка скачиваемого образа
+
+Встроенная проверка SHA-256/MD5 без внешних утилит
+
+Запись ISO на USB-флешку прямо из программы (без Rufus/Etcher)
+
+Скачивание нескольких образов одновременно (пакетный режим)
+
+Добавление других дистрибутивов Linux (Debian, Arch)
+
+Графический интерфейс на Lazarus (как альтернатива консольному)
+
+Следите за обновлениями — проект будет становиться только лучше!
 
 📁 Файлы
 ubuntu-downlouderV4.exe — готовая программа
