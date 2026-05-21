@@ -1,8 +1,7 @@
 🚀 Distro ISO Downloader v4.0
-https://img.shields.io/badge/Made%2520with-Pascal-%2523003a6f?style=flat-square
-https://img.shields.io/badge/License-MIT-yellow.svg?style=flat-square
-https://img.shields.io/badge/Platform-Windows-lightgrey?style=flat-square
-
+[![Pascal](https://img.shields.io/badge/Made%20with-Pascal-%23003a6f?style=flat-square)](https://www.freepascal.org/)
+[![License](https://img.shields.io/badge/License-MIT-yellow.svg?style=flat-square)](LICENSE)
+[![Platform](https://img.shields.io/badge/Platform-Windows-lightgrey?style=flat-square)]()
 Консольный загрузчик официальных ISO‑образов Ubuntu, Kubuntu, Lubuntu и Windows 11.
 Программа скачивает выбранный дистрибутив напрямую с серверов правообладателей, не открывая браузер и не используя сайты‑посредники.
 
