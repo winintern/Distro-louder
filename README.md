@@ -75,14 +75,28 @@ Canonical Ltd. и Microsoft Corporation.
 Всё это делает процесс скачивания не скучным, а залипательным 😎
 
 📝 От автора
-Я написал эту программу на Pascal (Free Pascal).
-На это ушло полдня мучений с компилятором, HTTPS, WinINet и поиском рабочих ссылок.
-Но оно того стоило: теперь можно скачать Ubuntu или Windows одной кнопкой, без браузера.
+Я делал этот проект две недели. Кода было написано много, но ещё больше мыслей крутилось в голове.
+У меня было множество идей — я перебирал их, пробовал, отметал.
 
-Я буду рад, если вы скажете спасибо за мои старания — хотя бы мысленно. Хех.
+После третьей версии я застыл. Казалось, что всё готово, и дальше двигаться некуда.
+Но всё это время я продолжал думать — как будет работать четвёртая версия, что в ней должно быть, какой она станет.
+
+И я придумал. V4 — это результат не просто часов за клавиатурой, а дней размышлений, внутренних споров и желания сделать инструмент, которым можно гордиться.
+
+Если вы это читаете — спасибо. Значит, мой проект кому‑то пригодился.
 
 (English)
-I wrote this tool in Pascal (Free Pascal). It took me half a day of fighting the compiler, HTTPS, and various DLLs. But it was worth it: now you can download Ubuntu or Windows with one click. I'd really appreciate a thank you for my effort — even if just in your head. Heh.
+I worked on this project for two weeks. A lot of code was written, but even more thoughts were spinning in my head.
+I had tons of ideas — I shuffled them, tested them, threw many away.
+
+After the third version I froze. It felt like everything was done and there was nowhere to go.
+But all that time I kept thinking — how the fourth version would work, what it should contain, what it would become.
+
+And I figured it out. V4 is the result not just of hours at the keyboard, but of days of reflection, internal debates, and the desire to create a tool I could be proud of.
+
+If you're reading this — thank you. It means my project was useful to someone.
+
+
 🛠️ Планы на будущее
 Эта программа будет обновляться, пока не достигнет стадии совершенства.
 В дальнейших версиях планируется:
