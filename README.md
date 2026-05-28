@@ -1,133 +1,124 @@
-🚀 Distro ISO Downloader v4.0
+# 🚀 Distro ISO Downloader v6.0 (Console Edition)
+
 [![Pascal](https://img.shields.io/badge/Made%20with-Pascal-%23003a6f?style=flat-square)](https://www.freepascal.org/)
 [![License](https://img.shields.io/badge/License-MIT-yellow.svg?style=flat-square)](LICENSE)
 [![Platform](https://img.shields.io/badge/Platform-Windows-lightgrey?style=flat-square)]()
-Консольный загрузчик официальных ISO‑образов Ubuntu, Kubuntu, Lubuntu и Windows 11.
-Программа скачивает выбранный дистрибутив напрямую с серверов правообладателей, не открывая браузер и не используя сайты‑посредники.
 
-📦 Что это и зачем
-Вы выбираете нужную ОС (Ubuntu 22.04/24.04/25.04, Kubuntu 22.04 LTS, Lubuntu 22.04 LTS, Windows 11 25H2)
+**A console downloader for official ISO images of Linux and BSD distributions.**  
+Downloads ISO files directly from copyright holder servers, without opening a browser or using intermediary websites.
 
-Утилита сразу начинает загрузку ISO в C:\Downloads
+## 📦 What is it and why
 
-Показывается прогресс‑бар, скорость скачивания и анимация (ракеты, наполняющие чашу)
+- Select the desired OS from a beautiful TUI menu
+- The utility immediately starts downloading the ISO to `C:\Downloads`
+- Shows a progress bar, download speed and status in real time
+- Automatically creates SHA‑256 checksum files for integrity verification
+- **Supports copying to a Ventoy‑prepared USB drive right after download**
+- No ads, no unnecessary steps
 
-Для Windows 11 автоматически создаётся файл с контрольной суммой (MD5) для проверки подлинности
+Useful when:
+- the official website is unavailable or overloaded, but you need to download the ISO quickly
+- you are reinstalling the system and don't want to search for the link every time
+- you just love the console and minimalism
 
-Никакой рекламы, никаких лишних действий
+## 🚫 Why Windows 11 was removed
 
-Пригодится, если:
+In previous versions, a third‑party mirror was used to download Windows 11.  
+**Due to concerns about copyright, Windows support has been completely removed.**  
+The program now only works with distributions whose licences explicitly allow redistribution or direct downloading.  
+This keeps the project safe and avoids any potential legal issues.
 
-официальный сайт недоступен или перегружен, а ISO нужно скачать быстро
+## 📜 Supported distributions
 
-вы переустанавливаете систему и не хотите каждый раз искать ссылку
+- **Ubuntu 22.04 LTS**
+- **Kubuntu 22.04 LTS**
+- **Lubuntu 22.04 LTS**
+- **CachyOS 260426**
+- **Slackware 15.0**
+- **FreeBSD 14.2**
+- **OpenBSD 7.6**
+- **NetBSD 10.1**
 
-вы просто любите консоль и минимализм
+All ISOs are downloaded from official mirrors or trusted sources.
 
-🖥️ Требования
-Windows 10 / 11 (или другая ОС с WinAPI)
+## 🧪 Version history
 
-Free Pascal Compiler (FPC) версии 3.2.2 или выше
+| Version | Status |
+|---------|--------|
+| V6.0 (current) | Stable, Windows‑free |
+| V5.x | Testing TUI, now abandoned |
+| V4.0 | Stable, legacy |
 
-Для записи ISO на USB‑флешку (встроенная функция) требуются права администратора
+## 🛠️ Requirements
 
-⚡ Быстрый старт
-bash
+- **Windows 10 / 11** (or another OS with WinAPI)
+- [Free Pascal Compiler (FPC)](https://www.freepascal.org/) version **3.2.2** or higher
+
+## ⚡ Quick start
+
+```bash
 git clone https://github.com/winintern/ubuntu-iso-downlouder.git
 cd ubuntu-iso-downlouder
-fpc ubuntudownlouderV4.pas
-ubuntu-downlouderV4.exe
-После запуска выберите нужный пункт меню и дождитесь окончания загрузки.
-ISO‑образ появится в папке C:\Downloads.
+fpc Main.pas
+Main.exe
 
-🔧 Как это устроено
-Программа написана на Object Pascal (Free Pascal).
-Для загрузки используется чистый WinINet (без OpenSSL и других внешних зависимостей).
-Ссылки на образы ведут на официальные серверы Canonical и Microsoft (проверенные статические ссылки).
-При желании вы можете легко добавить другие версии или архитектуры.
+After launch, select the desired menu item and wait for the download to finish.
+The ISO image will appear in the C:\Downloads folder.
 
-📁 Куда сохраняется файл
-Образы сохраняются в папку C:\Downloads, которая создаётся автоматически.
-Почему именно там? Потому что так решил автор. Это просто, удобно и файл никогда не потеряется.
+💾 Ventoy support
+After a successful download, the program can automatically copy the ISO to a Ventoy‑prepared USB flash drive.
+Simply set the drive letter in downloader.cfg (or configure it interactively in the program), and the program will offer to copy the file.
+Ventoy must be installed on the flash drive beforehand.
+This way, you can create a multi‑boot USB stick without ever leaving the console.
 
-⚠️ Важное предупреждение (дисклеймер)
-Я не ворую и не присваиваю себе продукт компаний Canonical или Microsoft.
-Все интеллектуальные права, права на распространение и торговые марки принадлежат
-Canonical Ltd. и Microsoft Corporation.
+🔧 How it works
+The program is written in Object Pascal (Free Pascal).
+Uses pure WinINet for downloading (no OpenSSL or other external dependencies).
+Links to images point to official servers. You can easily add other versions or architectures if you wish.
 
-Программа является некоммерческим проектом, созданным чисто из любопытства и желания помочь.
-Она не изменяет и не распространяет пиратские копии. ISO‑образы загружаются с официальных серверов правообладателей.
+📁 Where the file is saved
+Images are saved to the C:\Downloads folder, which is created automatically.
+Why there? Because the author decided so. It's simple, convenient, and you'll never lose the file.
 
-При первом запуске программа автоматически создаёт файл README_BEFORE_USE.txt (на русском и английском),
-содержащий полный текст дисклеймера. Ознакомьтесь с ним перед использованием.
+⚠️ Important disclaimer
+I do not steal or misappropriate the product of Canonical, FreeBSD Foundation or other owners.
+All intellectual rights, distribution rights and trademarks belong to their respective owners.
 
-📸 Анимация и интерфейс
-Во время загрузки ты видишь:
+The program is a non‑commercial project, created purely out of curiosity and a desire to help.
+It does not modify or distribute pirated copies. ISO images are downloaded from official copyright holder servers.
 
-Строку прогресса с процентами и скоростью (KB/s или MB/s)
+On first launch, the program automatically creates a welcome.html file (in Russian and English), containing the full disclaimer text. Please read it before use.
 
-Графический прогресс‑бар [###...]
+📸 Animation and interface
+During download you see:
 
-Чашу, наполняющуюся синей «водой» по мере загрузки
+A graphical progress bar [###...]
 
-Ракеты (^), взлетающие с нижней части экрана и падающие в чашу
+Real‑time speed (KB/s or MB/s)
 
-Всё это делает процесс скачивания не скучным, а залипательным 😎
+File name and size
 
-📝 От автора
-Я делал этот проект две недели. Кода было написано много, но ещё больше мыслей крутилось в голове.
-У меня было множество идей — я перебирал их, пробовал, отметал.
+All this is wrapped in a retro‑style TUI with frames
 
-После третьей версии я застыл. Казалось, что всё готово, и дальше двигаться некуда.
-Но всё это время я продолжал думать — как будет работать четвёртая версия, что в ней должно быть, какой она станет.
+The download process is not boring, but fascinating 😎
 
-И я придумал. V4 — это результат не просто часов за клавиатурой, а дней размышлений, внутренних споров и желания сделать инструмент, которым можно гордиться.
+📝 From the author
+I wrote this program in Pascal (Free Pascal).
+It took me weeks of struggling with the compiler, HTTPS, WinINet and searching for working links.
+But it was worth it: now you can download Linux or BSD with one click, without a browser.
 
-Если вы это читаете — спасибо. Значит, мой проект кому‑то пригодился.
+I would be glad if you say thank you for my efforts — even if just mentally. Heh.
 
-(English)
-I worked on this project for two weeks. A lot of code was written, but even more thoughts were spinning in my head.
-I had tons of ideas — I shuffled them, tested them, threw many away.
+📁 Files
+Main.exe — ready‑to‑use program
 
-After the third version I froze. It felt like everything was done and there was nowhere to go.
-But all that time I kept thinking — how the fourth version would work, what it should contain, what it would become.
+Main.pas — source code in Pascal
 
-And I figured it out. V4 is the result not just of hours at the keyboard, but of days of reflection, internal debates, and the desire to create a tool I could be proud of.
+C:\Downloads\welcome.html — documentation (created automatically)
 
-If you're reading this — thank you. It means my project was useful to someone.
+C:\Downloads\*.sha256 — checksum files (created automatically)
 
+📄 License
+MIT — do whatever you want with the code, just keep the authorship notice.
 
-🛠️ Планы на будущее
-Эта программа будет обновляться, пока не достигнет стадии совершенства.
-В дальнейших версиях планируется:
-
-Поддержка других редакций Windows (Education, Enterprise)
-
-Возможность выбора языка скачиваемого образа
-
-Встроенная проверка SHA-256/MD5 без внешних утилит
-
-Запись ISO на USB-флешку прямо из программы (без Rufus/Etcher)
-
-Скачивание нескольких образов одновременно (пакетный режим)
-
-Добавление других дистрибутивов Linux (Debian, Arch)
-
-Графический интерфейс на Lazarus (как альтернатива консольному)
-
-Следите за обновлениями — проект будет становиться только лучше!
-
-📁 Файлы
-ubuntu-downlouderV4.exe — готовая программа
-
-ubuntudownlouderV4.pas — исходный код на Pascal
-
-C:\Downloads\README_BEFORE_USE.txt — дисклеймер (создаётся автоматически)
-
-C:\Downloads\*.md5 — файлы контрольных сумм для Windows (создаются автоматически)
-
-📄 Лицензия
-MIT — делайте с кодом всё, что хотите, только сохраняйте указание авторства.
-
-Создано с уважением к Ubuntu, Windows и любовью к Паскалю.
-
+Created with respect for Linux, BSD and love for Pascal.❤️
