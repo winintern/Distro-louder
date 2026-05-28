@@ -57,10 +57,10 @@ All ISOs are downloaded from official mirrors or trusted sources.
 ## ⚡ Quick start
 
 ```bash
-git clone https://github.com/winintern/ubuntu-iso-downlouder.git
-cd ubuntu-iso-downlouder
-fpc Main.pas
-Main.exe
+git clone https://github.com/winintern/Distro-louder.git
+cd distro-louder
+fpc distro-louderV6.pas
+distro-louderV6.exe
 
 After launch, select the desired menu item and wait for the download to finish.
 The ISO image will appear in the C:\Downloads folder.
