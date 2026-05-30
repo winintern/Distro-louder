@@ -117,6 +117,9 @@ Main.pas — source code in Pascal
 C:\Downloads\welcome.html — documentation (created automatically)
 
 C:\Downloads\*.sha256 — checksum files (created automatically)
+## 📧 Contact
+
+For questions or suggestions, please contact: **[winitern1@gmail.com]**
 
 📄 License
 MIT — do whatever you want with the code, just keep the authorship notice.
