@@ -6,7 +6,7 @@
 [![Status](https://img.shields.io/badge/Status-Stable-brightgreen.svg)]()
 
 > **Console ISO downloader for Linux & BSD distributions**  
-> *No bullshit, just downloads from official sources.*
+> *just downloads from official sources.*
 
 Distro-louder is a TUI (Text User Interface) program for Windows that downloads official ISO images of popular Linux and BSD distributions directly from the developers' servers. No ads, no spyware, just a clean console tool.
 
