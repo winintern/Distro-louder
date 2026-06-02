@@ -46,22 +46,7 @@ Distro-louder is a TUI (Text User Interface) program for Windows that downloads 
 | Alpine Linux | 3.19              |
 
 > **Note:** Debian, Fedora, and Manjaro links may fail due to server redirects – this is not a program bug. Feel free to adjust URLs in the source code.
-
 ---
-
-## 📥 How to get it
-
-### Option 1: Download pre‑compiled EXE
-Grab the latest `distro-louderV8.2.exe` from the [Releases page](https://github.com/winintern/Distro-louder/releases).
-
-### Option 2: Compile from source
-Requires [Free Pascal Compiler](https://www.freepascal.org/) 3.2.2 or newer.
-
-```bash
-git clone https://github.com/winintern/Distro-louder.git
-cd Distro-louder
-fpc distro-louderV8.2.pas
-distro-louderV8.2.
 ## 📥 How to get it
 
 ### Option 1: Download pre‑compiled EXE
