@@ -1,66 +1,163 @@
-🚀 Distro-louder v8.2
+# 🐧 Distro-louder
+
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![FPC](https://img.shields.io/badge/FPC-3.2.2-blue.svg)](https://www.freepascal.org/)
 [![Windows](https://img.shields.io/badge/Platform-Windows-0078D6.svg)](https://www.microsoft.com/windows)
 [![Status](https://img.shields.io/badge/Status-Stable-brightgreen.svg)]()
 
-Console ISO downloader for Linux & BSD distributions
-No bullshit, just downloads from official sources.
+> **Console ISO downloader for Linux & BSD distributions**  
+> *No bullshit, just downloads from official sources.*
 
-✨ What's new in v8.2?
-Why 8.2, not 8.1?
-Version 8.1 worked but had two annoying problems:
+Distro-louder is a TUI (Text User Interface) program for Windows that downloads official ISO images of popular Linux and BSD distributions directly from the developers' servers. No ads, no spyware, just a clean console tool.
 
-Laggy comets – the star animation made the menu sluggish.
+---
 
-Dead links – old Ubuntu (16.04, 18.04, 20.04) and some BSD releases stopped working.
+## ✨ Features
 
-v8.2 fixes that:
+- 🎮 **Keyboard-driven TUI** with starry background and rare comets.
+- ⬇️ **Real-time download info**: progress bar, speed, ETA, downloaded size.
+- ⏸️ **Pause & resume** – press `P` during download.
+- 📦 **Batch download** – select multiple ISOs and download one after another.
+- 💿 **Mount ISO as virtual drive** (Windows native, via PowerShell).
+- 💾 **Copy to Ventoy USB** (configurable drive letter).
+- 📁 **Automatic sorting** – saves ISOs into subfolders (`Ubuntu`, `BSD`, `Debian`, etc.).
+- 🐱 **Easter eggs**: `Ctrl+K` for a cat, `Ctrl+U` for Ubuntu 15.04 hidden download.
+- 🌐 **Internet connection check** before download.
+- 📝 **Event logging** to `download.log`.
+- ⚙️ **Configurable** via `downloader.cfg` (save directory, theme, user agent, Ventoy drive).
 
-✅ Comets are now rare and non‑blocking (2% chance, no background loops).
+---
 
-✅ Replaced broken links with working ones: FreeBSD 13.5, Alpine Linux, Debian 12, Fedora 40, Manjaro 24 (note: some may fail due to server redirects – not a program bug).
+## 🖥️ Supported distributions (v8.2)
 
-✅ Easter egg – press Ctrl+U to download Ubuntu 15.04 (hidden treasure).
+| Distribution | Version / Release |
+|--------------|-------------------|
+| Ubuntu       | 22.04 LTS         |
+| Kubuntu      | 22.04 LTS         |
+| Lubuntu      | 22.04 LTS         |
+| CachyOS      | 260426            |
+| Slackware    | 15.0              |
+| FreeBSD      | 13.5              |
+| OpenBSD      | 7.6               |
+| NetBSD       | 10.1              |
+| Debian       | 12.5.0 (may redirect) |
+| Fedora       | Workstation 40    |
+| Manjaro      | 24.0.6            |
+| Alpine Linux | 3.19              |
 
-✅ Checksum verification temporarily disabled for speed and stability (will be back later).
+> **Note:** Debian, Fedora, and Manjaro links may fail due to server redirects – this is not a program bug. Feel free to adjust URLs in the source code.
 
-✅ Full 12‑item menu with automatic sorting into subfolders (Ubuntu, BSD, Debian, etc.).
+---
 
-Why is the code smaller now?
-I intentionally reduced the source size to:
+## 📥 How to get it
 
-Make debugging faster and easier.
+### Option 1: Download pre‑compiled EXE
+Grab the latest `distro-louderV8.2.exe` from the [Releases page](https://github.com/winintern/Distro-louder/releases).
 
-Speed up compilation.
+### Option 2: Compile from source
+Requires [Free Pascal Compiler](https://www.freepascal.org/) 3.2.2 or newer.
 
-Reduce chance of random side‑effect bugs.
+```bash
+git clone https://github.com/winintern/Distro-louder.git
+cd Distro-louder
+fpc distro-louderV8.2.pas
+distro-louderV8.2.
+## 📥 How to get it
 
-All core features are still there:
-⬇️ ETA & speed display
-⏸️ Pause & resume (P key)
-📁 Batch download
-💿 ISO mounting (Windows native)
-💾 Copy to Ventoy
-⭐ Animated stars (smooth)
-🐱 Secret cat easter egg (Ctrl+K)
+### Option 1: Download pre‑compiled EXE
+Grab the latest `distro-louderV8.2.exe` from the [Releases page](https://github.com/winintern/Distro-louder/releases).
 
-🖥️ How to compile & run
-bash
+### Option 2: Compile from source
+Requires [Free Pascal Compiler](https://www.freepascal.org/) 3.2.2 or newer.
+
+```bash
 git clone https://github.com/winintern/Distro-louder.git
 cd Distro-louder
 fpc distro-louderV8.2.pas
 distro-louderV8.2.exe
-Requires Free Pascal Compiler 3.2.2 or newer.
 
-📫 Feedback & bug reports
-If you have questions or find a bug, please write to:
-winitern1@gmail.com
+---
+🎮 How to use
 
-📜 Notice
+1. Run distro-louderV8.2.exe.
+2. Use arrow keys (↑/↓) to select a distribution.
+3. Press Enter to start downloading.
+4. During download:
+   · Press P to pause/resume.
+   · Press Q to cancel.
+5. After download, you can copy the ISO to a Ventoy USB or mount it directly.
+
+Additional menu options (press number keys 1‑4):
+
+· 1 – Verify checksum (disabled in v8.2, will be back)
+· 2 – Change download directory
+· 3 – Batch download
+· 4 – Mount existing ISO as virtual drive
+
+Easter eggs:
+
+· Ctrl+K – secret cat that watches your choice and meows.
+· Ctrl+U – download Ubuntu 15.04 (hidden classic).
+
+---
+
+⚙️ Configuration
+
+On first run, downloader.cfg is created. Edit it to change:
+
+```ini
+[Paths]
+SaveDir=C:\Downloads
+
+[UI]
+Theme=Dark   ; Dark/Light/Orange
+
+[Network]
+UserAgent=DistroLoader/8.2
+Retries=3
+
+[Ventoy]
+Drive=E      ; Drive letter of your Ventoy USB
+```
+
+---
+
+🐞 Feedback & bug reports
+
+If you find a bug or have a question, please write to:
+📧 winitern1@gmail.com
+
+---
+
+📜 Legal notice
+
 This is a non‑commercial personal project.
-All trademarks belong to their respective owners.
+All trademarks (Ubuntu, Kubuntu, Lubuntu, CachyOS, Slackware, FreeBSD, OpenBSD, NetBSD, Debian, Fedora, Manjaro, Alpine) belong to their respective owners.
 ISO files are downloaded directly from official sources – no piracy, no redistribution.
+The author does not claim any affiliation with or endorsement by any of the trademark holders.
 
-🙏 Thanks
-For using, testing
+---
+
+📄 License
+
+Distributed under the MIT License. See LICENSE file for details.
+Do whatever you want with the code, just keep the authorship notice.
+
+---
+
+🙏 Acknowledgements
+
+· Free Pascal and the FPC team.
+· All distribution maintainers for providing free ISO downloads.
+· You, for using this tool.
+
+---
+
+Made with ❤️
+
+
+
+
+
+
+
