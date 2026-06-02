@@ -129,15 +129,6 @@ Distributed under the MIT License. See LICENSE file for details.
 Do whatever you want with the code, just keep the authorship notice.
 
 ---
-
-🙏 Acknowledgements
-
-· Free Pascal and the FPC team.
-· All distribution maintainers for providing free ISO downloads.
-· You, for using this tool.
-
----
-
 Made with ❤️
 
 
