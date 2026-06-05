@@ -1,51 +1,63 @@
-# 🐧 Distro-louder
+# 🐧# Distro-louder v8.3
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![FPC](https://img.shields.io/badge/FPC-3.2.2-blue.svg)](https://www.freepascal.org/)
 [![Windows](https://img.shields.io/badge/Platform-Windows-0078D6.svg)](https://www.microsoft.com/windows)
 [![Status](https://img.shields.io/badge/Status-Stable-brightgreen.svg)]()
 
-> **Console ISO downloader for Linux & BSD distributions**  
-> *just downloads from official sources.*
-
-Distro-louder is a TUI (Text User Interface) program for Windows that downloads official ISO images of popular Linux and BSD distributions directly from the developers' servers. No ads, no spyware, just a clean console tool.
+Console ISO downloader for Linux and BSD distributions.  
+Downloads official ISOs directly from developers' servers. No bullshit.
 
 ---
 
-## ✨ Features
+## Features
 
-- 🎮 **Keyboard-driven TUI** with starry background and rare comets.
-- ⬇️ **Real-time download info**: progress bar, speed, ETA, downloaded size.
-- ⏸️ **Pause & resume** – press `P` during download.
-- 📦 **Batch download** – select multiple ISOs and download one after another.
-- 💿 **Mount ISO as virtual drive** (Windows native, via PowerShell).
-- 💾 **Copy to Ventoy USB** (configurable drive letter).
-- 📁 **Automatic sorting** – saves ISOs into subfolders (`Ubuntu`, `BSD`, `Debian`, etc.).
-- 🐱 **Easter eggs**: `Ctrl+K` for a cat, `Ctrl+U` for Ubuntu 15.04 hidden download.
-- 🌐 **Internet connection check** before download.
-- 📝 **Event logging** to `download.log`.
-- ⚙️ **Configurable** via `downloader.cfg` (save directory, theme, user agent, Ventoy drive).
+- Keyboard-driven TUI with starry background  
+- Real-time download info: progress bar, speed, ETA  
+- Pause and resume (P key)  
+- Batch download (select multiple ISOs)  
+- Mount ISO as virtual drive (Windows native)  
+- Copy to Ventoy USB (configurable)  
+- Automatic sorting into subfolders (Ubuntu, BSD, Arch, etc.)  
+- Event logging to `download.log`  
+- Configurable via `downloader.cfg`  
+- Screen saver after 60 seconds of inactivity  
+- State icons: `[✓]` for downloaded ISOs  
 
 ---
 
-## 🖥️ Supported distributions (v8.2)
+## Supported distributions (v8.3)
 
-| Distribution | Version / Release |
-|--------------|-------------------|
-| Ubuntu       | 22.04 LTS         |
-| Kubuntu      | 22.04 LTS         |
-| Lubuntu      | 22.04 LTS         |
-| CachyOS      | 260426            |
-| Slackware    | 15.0              |
-| FreeBSD      | 13.5              |
-| OpenBSD      | 7.6               |
-| NetBSD       | 10.1              |
-| Debian       | 12.5.0 (may redirect) |
-| Fedora       | Workstation 40    |
-| Manjaro      | 24.0.6            |
-| Alpine Linux | 3.19              |
+| Distribution   | Version / Release          |
+|----------------|----------------------------|
+| Ubuntu         | 22.04 LTS                  |
+| Kubuntu        | 22.04 LTS                  |
+| Lubuntu        | 22.04 LTS                  |
+| CachyOS        | 260426                     |
+| Slackware      | 15.0                       |
+| FreeBSD        | 13.5                       |
+| OpenBSD        | 7.6                        |
+| NetBSD         | 10.1                       |
+| Arch Linux     | 2026.06.01 (rolling)       |
+| Rocky Linux    | 9.6                        |
+| Void Linux     | musl 20250401              |
+| Alpine Linux   | 3.19                       |
 
-> **Note:** Debian, Fedora, and Manjaro links may fail due to server redirects – this is not a program bug. Feel free to adjust URLs in the source code.
+---
+
+## How to get it
+
+### Pre-compiled EXE  
+Download from [Releases](https://github.com/winintern/Distro-louder/releases).
+
+### Compile from source  
+Requires [Free Pascal Compiler](https://www.freepascal.org/) 3.2.2 or newer.
+
+```bash
+git clone https://github.com/winintern/Distro-louder.git
+cd Distro-louder
+fpc distro-louderV8.3.pas
+distro-louderV8.3.exe
 ---
 ## 📥 How to get it
 
