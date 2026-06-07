@@ -1,69 +1,77 @@
-# 🪐 Distro-louder v8.5 – *interstellar ISO transporter*
-. .
-. .
-. .
-| _ | _ |_ | | _ \
-| |) | |) || | | | | |
-| __/| _ < | | | || |
-|| || ____| |____/
+# 🚀 Distro-louder v8.5
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![FPC](https://img.shields.io/badge/FPC-3.2.2-blue.svg)](https://www.freepascal.org/)
 [![Windows](https://img.shields.io/badge/Platform-Windows-0078D6.svg)](https://www.microsoft.com/windows)
 
-> *Beam down official Linux/BSD ISOs from orbit*
+**Консольный TUI-загрузчик официальных ISO-образов Linux и BSD**
 
 ---
 
-## 🌠 Mission features
+## ✨ Что нового в v8.5
 
-- **🕹️ TUI cockpit** – arrow keys, starfield, responsive  
-- **📡 Live telemetry** – speed, ETA, progress bar  
-- **⏸️ Pause / resume** – `P` to hold orbit  
-- **📦 Batch delivery** – auto‑skip existing ISOs  
-- **💾 Ventoy dock** – copy ISO to USB with one click  
-- **🔗 Custom cargo** – download any .iso with history  
-- **⏰ Scheduled drops** – create .bat + Task Scheduler (run once, self‑delete)  
-- **🕒 Stardate** – clock + download counters (Today/Total)  
-- **🛡️ Safety shields** – clear warnings before any risky action  
-
----
-
-## 🪐 Supported galaxies
-
-Ubuntu 22.04 · Kubuntu 22.04 · Lubuntu 22.04 · CachyOS 260426 · Slackware 15.0 · FreeBSD 13.5 · OpenBSD 7.6 · NetBSD 10.1 · Arch Linux (2026.06.01) · Rocky Linux 9.6 · Void Linux (musl) · Alpine 3.19  
-
-*All ISOs beamed from official sources.*
+- 🕒 **Отложенная загрузка** вместо проблемного планировщика Windows.
+- 🔗 **Кастомные URL** с историей (сохраняются в `custom_urls.txt`).
+- 📊 **Счётчики скачанных ISO** (сегодня и всего).
+- 🕹️ **Часы и дата** в правом углу.
+- 📦 **Пакетный режим** с прогрессом (`Batch: 2/5 completed`).
+- 🎨 **Неоновая рамка** (ярко-зелёная).
+- ⏸️ **Пауза/возобновление** загрузки (`P`).
+- ⚡ **ETA и скорость** в реальном времени.
+- 🐱 **Пасхалка `Ctrl+K`** (дождь из кошек).
+- 🧹 **Оптимизированная перерисовка** – меню обновляется только при необходимости.
 
 ---
 
-## 🚀 Launch sequence
+## ❓ Почему убран планировщик задач (schtasks)?
 
-### Pre‑compiled EXE  
-[Download from Releases](https://github.com/winintern/Distro-louder/releases)
+В предыдущих версиях мы пытались добавить автоматическое планирование через `schtasks`. Однако на практике выяснилось:
 
-### Build from source  
-Requires [Free Pascal Compiler](https://www.freepascal.org/) 3.2.2+  
-```bash
-git clone https://github.com/winintern/Distro-louder.git
-cd Distro-louder
-fpc distro-louderV8.5.pas
-distro-louderV8.5.exe
-🎮 Controls
-Key	Action
-↑ ↓	Select distribution
-Enter	Start download
-P	Pause / resume
-C	Custom ISO (with history)
-S	Schedule download
-1–4 / F1–F4	Extra actions
-Q	Quit
-⚠️ Flight safety notice
-Custom URLs – you are the captain. Verify the source before launch.
+- ❌ Команда `schtasks` вела себя **нестабильно** на разных версиях Windows (ошибки с параметрами `/ST` и `/SD`, непредсказуемые требования к формату даты).
+- ❌ Для создания задачи **требуются права администратора** (UAC), что пугало пользователей и вызывало ложные срабатывания антивирусов.
+- ❌ Даже при правильной настройке задача могла не выполниться из-за локальных политик или настроек планировщика.
 
-Scheduled downloads – the program creates a .bat file. Run it as Administrator to register a one‑time task in Task Scheduler. The task will delete itself after execution (/z).
+**Поэтому мы заменили планировщик на отложенную загрузку:**
 
-The author assumes no liability for any damage, data loss, or legal issues resulting from misuse.
+- ✅ Программа **не требует прав администратора**.
+- ✅ Вы указываете **время задержки в минутах** или конкретное время (HH:MM).
+- ✅ Программа остаётся запущенной (можно свернуть окно) и автоматически начинает загрузку в указанный момент.
+- ✅ Отображается **обратный отсчёт** прямо в интерфейсе.
+- ✅ Отложенную загрузку можно **отменить** клавишей `D` (повторное нажатие).
 
-📜 License
-MIT – free as space. Keep the original copyright notice
+Это простое и надёжное решение, которое покрывает 99% потребностей в запланированном скачивании.
+
+---
+
+## 🖥️ Управление
+
+| Клавиша | Действие |
+|---------|----------|
+| `↑` `↓` | Выбор дистрибутива |
+| `Enter` | Начать загрузку |
+| `P` | Пауза / возобновление |
+| `C` | Скачать кастомный ISO (с историей) |
+| `D` | **Отложенная загрузка** (или отмена) |
+| `F1`–`F4` / `1`–`4` | Дополнительные действия |
+| `Q` | Выход |
+
+---
+
+## ⚙️ Конфигурация
+
+Файл `downloader.cfg` создаётся автоматически. Пример:
+
+```ini
+[Paths]
+SaveDir=C:\Downloads
+
+[UI]
+Theme=Dark   ; Dark / Light / Orange
+
+[Network]
+UserAgent=DistroLoader/8.5
+
+[Ventoy]
+Drive=E      ; буква USB с Ventoy (опционально)
+📜 Лицензия
+MIT — делайте с кодом что хотите, оставляя уведомление об авторстве.
